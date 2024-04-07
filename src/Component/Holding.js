@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
+import {ARROW_DOWN} from '../Constants';
 import useHoldingsCalculator from '../Hooks/useHoldingCalculator';
 
 const HoldingsCalculator = ({data, toggleBottomSheet}) => {
@@ -10,12 +10,7 @@ const HoldingsCalculator = ({data, toggleBottomSheet}) => {
     <View style={styles.container}>
       <TouchableOpacity onPress={toggleBottomSheet} style={styles.touchable}>
         <View style={styles.row}>
-          <Icon
-            name={'angle-down'}
-            size={24}
-            style={styles.icon}
-            color="#A020F0"
-          />
+          <Image source={ARROW_DOWN} />
         </View>
       </TouchableOpacity>
       <Text style={styles.label}>Current Value:</Text>

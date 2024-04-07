@@ -1,10 +1,16 @@
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import React, {useState} from 'react';
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Image,
+} from 'react-native';
 import {useSelector} from 'react-redux';
-import {API_BASE_URL, HEADER_TITLE} from '../Constants';
+import {API_BASE_URL, HEADER_TITLE, ARROW_UP} from '../Constants';
 import useFetchData from '../Hooks/useFetchData';
 import useHoldingsCalculator from '../Hooks/useHoldingCalculator';
 import BottomSheet from './BottomSheet';
@@ -49,12 +55,7 @@ const HoldingsScreen = () => {
             style={styles.touchable}>
             <View style={styles.row}>
               <Text style={styles.textDecorateLabel}>Profit & Loss:</Text>
-              <Icon
-                name="angle-up"
-                size={24}
-                style={styles.icon}
-                color="#A020F0"
-              />
+              <Image source={ARROW_UP} style={styles.icon} />
               <Text style={styles.textDecorate}>{totalPNL}</Text>
             </View>
           </TouchableOpacity>
@@ -80,16 +81,11 @@ const styles = StyleSheet.create({
   },
   textDecorateLabel: {
     fontWeight: 'bold',
+    alignSelf: 'flex-end',
   },
   container: {
     justifyContent: 'center',
-    backgroundColor: '#fff',
     top: 50,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
@@ -98,7 +94,15 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
+    width: '100%',
+    margin: 16,
+    padding: 20,
+    borderRadius: 10,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    backgroundColor: '#fff',
   },
   icon: {
     marginLeft: 60,
