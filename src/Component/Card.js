@@ -13,8 +13,8 @@ const Card = item => {
       <Text style={styles.symbol}>{symbol}</Text>
       <Text style={styles.avgPrice}>{quantity}</Text>
       <View style={styles.rightCard}>
-        <Text style={styles.ltp}>LTP: {`$ ${ltp}`}</Text>
-        <Text style={styles.quantity}>P/L: {`$ ${pnl}`}</Text>
+        <Text style={styles.ltp}>LTP: {`₹ ${ltp}`}</Text>
+        <Text style={styles.quantity}>P/L: {`₹ ${pnl}`}</Text>
       </View>
     </View>
   );

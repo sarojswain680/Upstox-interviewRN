@@ -14,17 +14,17 @@ const HoldingsCalculator = ({data, toggleBottomSheet}) => {
         </View>
       </TouchableOpacity>
       <Text style={styles.label}>Current Value:</Text>
-      <Text style={styles.value}>{totalCurrentValue}</Text>
+      <Text style={styles.value}>{`₹ ${totalCurrentValue}`}</Text>
 
       <Text style={styles.label}>Total Investment:</Text>
-      <Text style={styles.value}>{totalInvestmentValue}</Text>
+      <Text style={styles.value}>{`₹ ${totalInvestmentValue}`}</Text>
 
       <Text style={styles.label}>Today's Profit & Loss:</Text>
-      <Text style={styles.value}>{todaysPNL}</Text>
+      <Text style={styles.value}>{`₹ ${todaysPNL}`}</Text>
 
       <View style={styles.bottomContent}>
         <Text style={styles.label}>Profit & Loss:</Text>
-        <Text style={styles.value}>{totalPNL}</Text>
+        <Text style={styles.value}>{`₹ ${totalPNL}`}</Text>
       </View>
     </View>
   );

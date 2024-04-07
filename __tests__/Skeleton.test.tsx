@@ -1,30 +1,24 @@
 import {render} from '@testing-library/react-native';
 import React from 'react';
-import Skeleton from '../src/Component/Skeleton';
+import ShimmerCard from '../src/Component/Shimmercard';
 
-describe('Skeleton Component', () => {
+describe('ShimmerCard Component', () => {
   test('renders correctly', () => {
-    const {getByTestId} = render(<Skeleton />);
+    const {getByTestId} = render(<ShimmerCard />);
 
     const card = getByTestId('skeleton-card');
     expect(card).toBeTruthy();
 
-    const imageContainer = getByTestId('image-container');
-    expect(imageContainer).toBeTruthy();
+    const skeleton1 = getByTestId('skeleton1');
+    expect(skeleton1).toBeTruthy();
 
-    const image = getByTestId('image');
-    expect(image).toBeTruthy();
+    const skeleton2 = getByTestId('skeleton2');
+    expect(skeleton2).toBeTruthy();
 
-    const content = getByTestId('content');
-    expect(content).toBeTruthy();
+    const skeleton3 = getByTestId('skeleton3');
+    expect(skeleton3).toBeTruthy();
 
-    const text1 = getByTestId('text1');
-    expect(text1).toBeTruthy();
-
-    const text2 = getByTestId('text2');
-    expect(text2).toBeTruthy();
-
-    const button = getByTestId('button');
-    expect(button).toBeTruthy();
+    const skeleton4 = getByTestId('skeleton4');
+    expect(skeleton4).toBeTruthy();
   });
 });

@@ -1,5 +1,6 @@
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
+import size from 'lodash/size';
 import React, {useState} from 'react';
 import {
   FlatList,
@@ -17,7 +18,7 @@ import BottomSheet from './BottomSheet';
 import Card from './Card';
 import Header from './Header';
 import HoldingsCalculator from './Holding';
-import Skeleton from './Skeleton';
+import useShimmerCards from '../Hooks/useShimmerCards';
 
 const HoldingsScreen = () => {
   const {loading, error} = useFetchData(API_BASE_URL);
@@ -25,7 +26,7 @@ const HoldingsScreen = () => {
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
   const userHolding = get(data, 'userHolding', []);
   const {totalPNL} = useHoldingsCalculator(userHolding);
-
+  const shimmerCards = useShimmerCards(size(userHolding));
   const toggleBottomSheet = () => {
     setIsBottomSheetOpen(!isBottomSheetOpen);
   };
@@ -33,16 +34,11 @@ const HoldingsScreen = () => {
   if (error) {
     return <Text>Error: {error}</Text>;
   }
-
+  console.log(userHolding);
   return (
     <View>
       {!isEmpty(userHolding) && <Header title={HEADER_TITLE} />}
-      {loading && isEmpty(userHolding) && (
-        <View>
-          <Skeleton />
-          <Skeleton />
-        </View>
-      )}
+      {loading && isEmpty(userHolding) && <View>{shimmerCards}</View>}
       <FlatList
         data={userHolding}
         renderItem={({item}) => <Card item={item} />}
@@ -62,6 +58,7 @@ const HoldingsScreen = () => {
           <BottomSheet isOpen={isBottomSheetOpen} onClose={toggleBottomSheet}>
             <HoldingsCalculator
               data={userHolding}
+              testId="modal"
               toggleBottomSheet={toggleBottomSheet}
             />
           </BottomSheet>

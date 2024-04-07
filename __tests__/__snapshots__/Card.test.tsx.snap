@@ -56,7 +56,7 @@ exports[`Card Component renders correctly 1`] = `
       }
     >
       LTP: 
-      $ 150
+      ₹ 150
     </Text>
     <Text
       style={
@@ -68,7 +68,7 @@ exports[`Card Component renders correctly 1`] = `
       }
     >
       P/L: 
-      $ NaN
+      ₹ NaN
     </Text>
   </View>
 </View>
