@@ -1,6 +1,15 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+# SnapShots
+![Simulator Screenshot - iPhone 15 - 2024-04-07 at 18 31 00](https://github.com/sarojswain680/Upstox-interviewRN/assets/43231362/eb4538b3-4aff-4400-b158-d3a9f7b7d10c)
+![Simulator Screenshot - iPhone 15 - 2024-04-07 at 18 30 06](https://github.com/sarojswain680/Upstox-interviewRN/assets/43231362/c53e2935-a094-4d3b-b55d-ae1c0d8a2eb4)
+![Simulator Screenshot - iPhone 15 - 2024-04-07 at 18 29 59](https://github.com/sarojswain680/Upstox-interviewRN/assets/43231362/2b14b9a5-1a44-400e-8454-a4ea39efdbe0)
+![Screenshot 2024-04-07 at 6 47 47 PM](https://github.com/sarojswain680/Upstox-interviewRN/assets/43231362/107424a8-f246-4ec6-b469-38fc4bbf6ee7)
+![Screenshot 2024-04-07 at 6 29 49 PM](https://github.com/sarojswain680/Upstox-interviewRN/assets/43231362/1175744b-a81e-4197-8126-817087877eb8)
+
+
 # Getting Started
+
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
