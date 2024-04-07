@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Component renders correctly 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 10,
+      "elevation": 5,
+      "marginHorizontal": 16,
+      "marginVertical": 8,
+      "padding": 20,
+      "shadowColor": "#000",
+      "shadowOffset": {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 3.84,
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "alignSelf": "flex-start",
+        "fontWeight": "bold",
+      }
+    }
+  >
+    AAPL
+  </Text>
+  <Text
+    style={
+      {
+        "marginBottom": 5,
+        "marginTop": 25,
+      }
+    }
+  >
+    100
+  </Text>
+  <View
+    style={
+      {
+        "marginTop": -55,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "alignSelf": "flex-end",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      LTP: 
+      $ 150
+    </Text>
+    <Text
+      style={
+        {
+          "alignSelf": "flex-end",
+          "fontWeight": "bold",
+          "marginTop": 20,
+        }
+      }
+    >
+      P/L: 
+      $ NaN
+    </Text>
+  </View>
+</View>
+`;
