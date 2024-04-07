@@ -1,5 +1,5 @@
-import get from 'loadsh/get';
-import isEmpty from 'loadsh/isEmpty';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
 import React, {useState} from 'react';
 import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -17,19 +17,16 @@ const HoldingsScreen = () => {
   const {loading, error} = useFetchData(API_BASE_URL);
   const {data} = useSelector(state => state.holdingList);
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
-
-  if (error) {
-    return <Text>Error: {error}</Text>;
-  }
-
-  const renderItem = ({item}) => <Card item={item} />;
-
   const userHolding = get(data, 'userHolding', []);
+  const {totalPNL} = useHoldingsCalculator(userHolding);
 
   const toggleBottomSheet = () => {
     setIsBottomSheetOpen(!isBottomSheetOpen);
   };
-  const {totalPNL} = useHoldingsCalculator(userHolding);
+
+  if (error) {
+    return <Text>Error: {error}</Text>;
+  }
 
   return (
     <View>
@@ -42,7 +39,7 @@ const HoldingsScreen = () => {
       )}
       <FlatList
         data={userHolding}
-        renderItem={renderItem}
+        renderItem={({item}) => <Card item={item} />}
         keyExtractor={item => item.symbol}
       />
       {!isEmpty(userHolding) && (
@@ -81,7 +78,9 @@ const styles = StyleSheet.create({
   textDecorate: {
     fontWeight: 'normal',
   },
-  textDecorateLabel: {fontWeight: 'bold'},
+  textDecorateLabel: {
+    fontWeight: 'bold',
+  },
   container: {
     justifyContent: 'center',
     backgroundColor: '#fff',

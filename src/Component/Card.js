@@ -12,7 +12,7 @@ const Card = item => {
     <View style={styles.card}>
       <Text style={styles.symbol}>{symbol}</Text>
       <Text style={styles.avgPrice}>{quantity}</Text>
-      <View style={{marginTop: -55}}>
+      <View style={styles.rightCard}>
         <Text style={styles.ltp}>LTP: {`$ ${ltp}`}</Text>
         <Text style={styles.quantity}>P/L: {`$ ${pnl}`}</Text>
       </View>
@@ -35,6 +35,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+  },
+  rightCard: {
+    marginTop: -55,
   },
   symbol: {
     fontWeight: 'bold',
