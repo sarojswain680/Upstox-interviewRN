@@ -36,7 +36,7 @@ const HoldingsScreen = () => {
   }
   console.log(userHolding);
   return (
-    <View>
+    <View testID="holdings-screen">
       {!isEmpty(userHolding) && <Header title={HEADER_TITLE} />}
       {loading && isEmpty(userHolding) && <View>{shimmerCards}</View>}
       <FlatList
